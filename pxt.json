@@ -1,0 +1,20 @@
+{
+    "name": "bitran 1",
+    "description": "",
+    "dependencies": {
+        "core": "*",
+        "devices": "*"
+    },
+    "files": [
+        "main.ts",
+        "README.md",
+        "main.py"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj"
+}
