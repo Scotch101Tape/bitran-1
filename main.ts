@@ -1,6 +1,7 @@
 let runningCode: boolean = false
 let codeToRun = 
 `fib1,1|write;fib2,1|write;fib3,(fib1|read,(fib2|read)|+)|write;fib3|read|print;fib1,(fib2|read)|write;fib2,(fib3|read)|write;fib1|read,100000000000|<,2|if;`;
+
 let stopCodeFlag: boolean = false
 
 input.onButtonPressed(Button.AB, function () {
