@@ -3,7 +3,8 @@
     "description": "",
     "dependencies": {
         "core": "*",
-        "devices": "*"
+        "devices": "*",
+        "microturtle": "github:microsoft/pxt-microturtle#v0.0.9"
     },
     "files": [
         "main.ts",

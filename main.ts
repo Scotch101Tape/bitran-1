@@ -1,6 +1,21 @@
 let runningCode: boolean = false
 let codeToRun = 
-`fib1,1|write;fib2,1|write;fib3,(fib1|read,(fib2|read)|+)|write;fib3|read|print;fib1,(fib2|read)|write;fib2,(fib3|read)|write;fib1|read,100000000000|<,2|if;`;
+`
+|led.clear;\
+x,0|write;\
+line 2;\
+x|read,2|led.toggle;\
+x,(x|read,1|+,5|%)|write;\
+0.5|wait;\
+2|goto;\
+`;
+
+/*EXAMPLES:
+    Fibbinoci - fib1,1|write;fib2,1|write;fib3,(fib1|read,(fib2|read)|+)|write;fib3|read|print;fib1,(fib2|read)|write;fib2,(fib3|read)|write;fib1|read,100000000000|<,2|if;
+    Loading Screen - x,0|write;line 1;x,2|led.toggle;x,(x|read,1|+,5|%)|write;1|goto;
+
+
+*/
 
 let stopCodeFlag: boolean = false
 
@@ -135,6 +150,14 @@ function runCode(code:string): void {
             },
             "led.toggle": function() {
                 led.toggle(parseInt(eval[0]), parseInt(eval[1]))
+                return(eval)
+            },
+            "led.show": function() {
+                basic.showString(eval[0])
+                return(eval)
+            },
+            "led.clear": function() {
+                basic.clearScreen()
                 return(eval)
             },
             //For editor only
